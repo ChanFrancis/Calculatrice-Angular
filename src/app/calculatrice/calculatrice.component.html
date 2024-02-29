@@ -1,0 +1,58 @@
+<section class="Page">
+    <div>
+        <h1>Calculatrice</h1>
+        <br>
+        <div class="info">Insérez 2 nombres, sélectionnez l'opération puis cliquez sur Calculer.</div>
+        <form (ngSubmit)="submitApplication()">
+            <div class="Calculatrice">
+                <div class="inputsNumber">
+                    <input type="number" [(ngModel)]="value1" name="value1" pattern="[0-9]*" appNumbers>
+                    <input type="number" [(ngModel)]="value2" name="value2" pattern="[0-9]*" appNumbers>
+                </div>
+
+                <div class="operatorButton">
+                    <input type="radio" id="add" name="operator" [(ngModel)]="operator" value="add" checked>
+                    <label for="add">+</label>
+
+                    <input type="radio" id="minus" name="operator" [(ngModel)]="operator" value="minus">
+                    <label for="minus">-</label>
+
+                    <input type="radio" id="multiply" name="operator" [(ngModel)]="operator" value="multiply">
+                    <label for="multiply">x</label>
+
+                    <input type="radio" id="divide" name="operator" [(ngModel)]="operator" value="divide">
+                    <label for="divide">/</label>
+                </div>
+
+            </div>
+            <br>
+            <div class="Calculer_container">
+                <button class="Calculer">CALCULER</button>
+            </div>
+        </form>
+        <br><br>
+    </div>
+
+    <div class="resultat">
+        Résultat
+        <div class="resultat_result">{{resultat}}</div>
+    </div>
+    <br><br>
+    <div>
+        <div class="historique">Historique</div>
+        <table>
+            <tr>
+                <th>Heure</th>
+                <th>Opération</th>
+                <th>Résultat</th>
+                <th>Suppression</th>
+            </tr>
+            <tr *ngFor="let result of results">
+                <td>{{ result[0] | date: 'h:mm' : 'UTC+1' }}</td>
+                <td>{{ result[1] }} {{ result[2] }} {{ result[3] }}</td>
+                <td>{{ result[4] }}</td>
+                <td><button (click)="DeleteLine( result[5] )" class="Effacer">Effacer</button></td>
+            </tr>
+        </table>
+    </div>
+</section>

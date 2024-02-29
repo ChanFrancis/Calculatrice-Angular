@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { ExoCalculatriceComponent } from './calculatrice/calculatrice.component'
+
+const routes: Routes = [
+  { path: '', component: ExoCalculatriceComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
