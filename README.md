@@ -1,6 +1,6 @@
 # Calculatrice
 Projet de création d'une calculatrice.
-Possiblité de calculer 2 nombres. Les calcules seront enregistrés dans l'historique accompagnés de l'heure de réalisation et d'un bouton de supression pour effacer le calcule de l'historique.
+Possiblité de calculer 2 nombres. Les calcules seront enregistrés dans l'historique accompagnés de l'heure de réalisation et d'un bouton de supression afin d'effacer le calcule de l'historique.
 
 <br>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
